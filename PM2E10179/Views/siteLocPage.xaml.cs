@@ -66,6 +66,8 @@ namespace PM2E10179.Views
 
         private void Button_Clicked(object sender, EventArgs e){
             MemoryStream imgMS = new MemoryStream(sitios.foto);
+            string img64 = Convert.ToBase64String(imgMS.ToArray());
+            
         }
     }
 }
