@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E10179.Views.MainPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Imagen de Sitio"/>
+            <Image x:Name="foto" WidthRequest="50" HeightRequest="100" BackgroundColor="Black"/>
+            <Label Text="Latitud"/>
+            <Entry x:Name="txtLat"/>
+            <Label Text="Longitud"/>
+            <Entry x:Name="txtLon"/>
+            <Label Text="Descripcion"/>
+            <Entry x:Name="txtDesc"/>
+            <Button x:Name="btnAdd"  Text="Agregar" Clicked="btnAdd_Clicked"/>
+            <Button x:Name="btnList" Text="Lista Sitios" Clicked="btnList_Clicked"/>
+            <Button x:Name="btnExit" Text="Salir" Clicked="btnExit_Clicked"/>
+            <Button x:Name="btnTakeF" Text="Tomar Foto" Clicked="btnTakeF_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

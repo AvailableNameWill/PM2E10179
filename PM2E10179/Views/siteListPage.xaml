@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E10179.Views.siteListPage"
+             xmlns:conver="clr-namespace:PM2E10179.Controllers">
+    <ContentPage.Resources>
+        <conver:imageConverter x:Key="ByteArray"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <CollectionView x:Name="sitesList"
+                        SelectionMode="Single"
+                        SelectionChanged="sitesList_SelectionChanged"
+                            HeightRequest="500">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid RowSpacing="40">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Grid.Row="0" x:Name="img"
+                               Source="{Binding foto, Converter={StaticResource ByteArray}}"
+                               WidthRequest="50"
+                               HeightRequest="50"/>
+                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding description}" Margin="30" FontSize="Large"
+                                   x:Name="lblDesc"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Orientation="Horizontal" Margin="100">
+                <Button Text="Eliminar Sitio" Clicked="Button_Clicked"/>
+                <Button Text="Ver Mapa" Clicked="Button_Clicked_1"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
