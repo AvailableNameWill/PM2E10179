@@ -11,6 +11,8 @@ using Plugin.Geolocator;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
 using PM2E10179.Models;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
+using System.IO;
 
 namespace PM2E10179.Views
 {
@@ -63,7 +65,7 @@ namespace PM2E10179.Views
         }
 
         private void Button_Clicked(object sender, EventArgs e){
-            String base64data = Convert.ToBase64String(sitios.foto);
+            MemoryStream imgMS = new MemoryStream(sitios.foto);
         }
     }
 }
