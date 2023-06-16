@@ -39,7 +39,6 @@ namespace PM2E10179.Views
         {
             if (selectedId != 0)
             {
-                await DisplayAlert("Aviso", "dl", "OK");
                 if (await App.Instancia.deleteSite(sitio) > 0)
                 {
                     await DisplayAlert("Aviso", "Sitio eliminado satisfactoriamente", "OK");
